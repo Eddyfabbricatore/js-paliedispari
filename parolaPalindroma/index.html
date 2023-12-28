@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <title>Parola palindroma</title>
 </head>
 <body>
+  <div class="container d-flex flex-column justify-content-center align-items-center">
+    <div class="mb-3">
+      <label for="wordCheck" class="form-label">Inserisci una parola per il controllo</label>
+      <input type="text" id="wordCheck" class="form-control">
+    </div>
+    
+    <button id="btnCheck" class="btn btn-secondary mb-3">Invia</button>
+
+    <h2 id="message"></h2>
+  </div>
 
   <script src="script.js"></script>
 </body>

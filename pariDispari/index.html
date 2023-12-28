@@ -4,9 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <title>Pari dispari</title>
 </head>
 <body>
+  <div class="container d-flex flex-column justify-content-center align-items-center">
+    <h1 class="mb-3">Pari o Dispari</h1>
+
+    <div class="row d-flex">
+      <div class="col">
+        <label for="inputNumber" class="form-label">Inserisci un numero</label>
+        <input type="number" id="inputNumber" class="form-control">
+      </div>
+
+      <div class="col">
+        <label for="selectType" class="form-label">Seleziona pari o dispari</label>
+
+        <select id="selectType" class="form-select">
+          <option value="even">Pari</option>
+          <option value="odd">Dispari</option>
+        </select>
+      </div>
+    </div> 
+
+    <button id="btnPlay" class="btn btn-secondary my-3">Gioca</button>
+
+    <h2 id="message"></h2>
+  </div>
   
   <script src="script.js"></script>
 </body>

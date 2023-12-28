@@ -1,0 +1,15 @@
+:root{
+  --bg-body: #6495ed;
+}
+
+body{
+  background-color: var(--bg-body);
+}
+
+.container{
+  height: 100vh;
+}
+
+.row{
+  width: 800px;
+}

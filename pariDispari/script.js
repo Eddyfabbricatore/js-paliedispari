@@ -1,40 +1,43 @@
-const numUtente = parseInt(prompt('Inserisci un numero da 1 a 5'));
-const pariDispari = prompt('Scegli pari o dispari');
+let numUser;
+let evenOdd;
+const btn = document.getElementById('btnPlay');
+let message = document.getElementById('message');
 
-const numComputer = randomizer();
-console.log(numComputer);
+btn.addEventListener('click', function(){
+  numUser = parseInt(document.getElementById('inputNumber').value);
+  evenOdd = document.getElementById('selectType').value;
 
-const miaSomma = somma(numUtente, numComputer);
-console.log(miaSomma);
+  if(evenOdd === 'even') evenOdd = 'pari';
+  else  evenOdd = 'dispari';
 
-const isPari = pari(miaSomma);
-console.log(isPari);
+  let numComputer = randomizer();
 
-const risultato = vincitore(pariDispari, isPari);
-console.log(risultato);
+  let tot = sum(numUser, numComputer);
+
+  let typeNum = isEvenOdd(tot);
+
+  let res = winner(numUser, evenOdd, numComputer, tot, typeNum);
+
+  message.innerHTML = res;
+})
 
 function randomizer(){
-  return Math.floor(Math.random() * (5 - 1 + 1) + 1 );
+  return Math.floor(Math.random() * 100) + 1;
 }
 
-function somma(n1, n2){
+function sum(n1, n2){
   return n1 + n2;
 }
 
-function pari(num){
-  if(num % 2){
-    return 'Dispari';
-  }else{
-    return 'Pari';
-  }
+function isEvenOdd(num){
+  if(num % 2) return 'dispari';
+  else  return 'pari';
 }
 
-function vincitore(parolaUtente, risSomma){
-  console.log(parolaUtente, risSomma);
-  
-  if(parolaUtente === risSomma){
-    return 'Il vincitore è l\'utente';
+function winner(numChoise, typeChoise, numGenerate, totNum, typeTot){  
+  if(typeChoise === typeTot){
+    return `Il numero scelto dall'utente è ${numChoise}, quello generato per il computer è ${numGenerate}. La somma è ${totNum} ed è ${typeTot}. Avevi giocato ${typeChoise}. Hai vinto`;
   }else{
-    return 'Il vincitore è il computer';
+    return `Il numero scelto dall'utente è ${numChoise}, quello generato per il computer è ${numGenerate}. La somma è ${totNum} ed è ${typeTot}. Avevi giocato ${typeChoise}. Hai perso`;
   }
 }
